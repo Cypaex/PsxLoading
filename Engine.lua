@@ -1,250 +1,180 @@
-local pusername = (game:GetService("Players")).LocalPlayer.Name;
-local RLoading = Instance.new("ScreenGui");
-local RMainFrame = Instance.new("Frame");
-local RTitle = Instance.new("TextLabel");
-local UITextSizeConstraint = Instance.new("UITextSizeConstraint");
-local Dots = Instance.new("Frame");
-local Dot1 = Instance.new("Frame");
-local UICorner = Instance.new("UICorner");
-local InsideDot = Instance.new("Frame");
-local UICorner_2 = Instance.new("UICorner");
-local Dot2 = Instance.new("Frame");
-local UICorner_3 = Instance.new("UICorner");
-local InsideDot_2 = Instance.new("Frame");
-local UICorner_4 = Instance.new("UICorner");
-local Dot3 = Instance.new("Frame");
-local UICorner_5 = Instance.new("UICorner");
-local InsideDot_3 = Instance.new("Frame");
-local UICorner_6 = Instance.new("UICorner");
-local Bar = Instance.new("Frame");
-local Bar2 = Instance.new("Frame");
-local UICorner_7 = Instance.new("UICorner");
-local UICorner_8 = Instance.new("UICorner");
-local Percentage = Instance.new("TextLabel");
-local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint");
-local Tip = Instance.new("TextLabel");
-local UITextSizeConstraint_3 = Instance.new("UITextSizeConstraint");
-local welcome = Instance.new("TextLabel");
-local UITextSizeConstraint_4 = Instance.new("UITextSizeConstraint");
-local leave = Instance.new("TextLabel");
-local UITextSizeConstraint_5 = Instance.new("UITextSizeConstraint");
-local EndSequence = Instance.new("Frame");
-if _G.ScriptName == nil and _G.FirstText == nil and _G.SecondText == nil and _G.ThirdText == nil and _G.WaitingTime == nil then
-	_G.ScriptName = "Rizz Scriptz";
-	_G.FirstText = "Preparing Script...";
-	_G.SecondText = "Loading Script...";
-	_G.ThirdText = "Almost Done...";
-	_G.WaitingTime = 180;
+
+
+-- Create the Loading Screen GUI
+local RLoading = Instance.new("ScreenGui")
+RLoading.Name = "RLoading"
+RLoading.Parent = game:GetService("CoreGui")
+RLoading.IgnoreGuiInset = true
+
+local RMainFrame = Instance.new("Frame")
+RMainFrame.Name = "RMainFrame"
+RMainFrame.Parent = RLoading
+RMainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+RMainFrame.BorderSizePixel = 0
+RMainFrame.Size = UDim2.new(1, 0, 1, 0)
+
+local RTitle = Instance.new("TextLabel")
+RTitle.Name = "RTitle"
+RTitle.Parent = RMainFrame
+RTitle.AnchorPoint = Vector2.new(0.5, 0)
+RTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+RTitle.BackgroundTransparency = 1
+RTitle.Position = UDim2.new(0.5, 0, 0.2, 0) -- Moved down the script name
+RTitle.Size = UDim2.new(0, 400, 0, 60)
+RTitle.Font = Enum.Font.FredokaOne
+RTitle.Text = _G.ScriptName
+RTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+RTitle.TextSize = 36
+
+local Dots = Instance.new("Frame")
+Dots.Name = "Dots"
+Dots.Parent = RMainFrame
+Dots.AnchorPoint = Vector2.new(0.5, 0.5)
+Dots.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Dots.BackgroundTransparency = 1
+Dots.Position = UDim2.new(0.5, 0, 0.45, 0) -- Moved up the loading dots
+Dots.Size = UDim2.new(0, 200, 0, 40)
+
+local Dot1 = Instance.new("Frame")
+Dot1.Name = "Dot1"
+Dot1.Parent = Dots
+Dot1.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Dot1.Position = UDim2.new(0, 0, 0, 0)
+Dot1.Size = UDim2.new(0, 20, 0, 20)
+
+local InsideDot = Instance.new("Frame")
+InsideDot.Name = "InsideDot"
+InsideDot.Parent = Dot1
+InsideDot.AnchorPoint = Vector2.new(0.5, 0.5)
+InsideDot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InsideDot.Position = UDim2.new(0.5, 0, 0.5, 0)
+InsideDot.Size = UDim2.new(0, 14, 0, 14)
+
+local Dot2 = Instance.new("Frame")
+Dot2.Name = "Dot2"
+Dot2.Parent = Dots
+Dot2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Dot2.Position = UDim2.new(0.5, -10, 0, 0)
+Dot2.Size = UDim2.new(0, 20, 0, 20)
+
+local InsideDot2 = Instance.new("Frame")
+InsideDot2.Name = "InsideDot"
+InsideDot2.Parent = Dot2
+InsideDot2.AnchorPoint = Vector2.new(0.5, 0.5)
+InsideDot2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InsideDot2.Position = UDim2.new(0.5, 0, 0.5, 0)
+InsideDot2.Size = UDim2.new(0, 14, 0, 14)
+
+local Dot3 = Instance.new("Frame")
+Dot3.Name = "Dot3"
+Dot3.Parent = Dots
+Dot3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Dot3.Position = UDim2.new(1, -20, 0, 0)
+Dot3.Size = UDim2.new(0, 20, 0, 20)
+
+local InsideDot3 = Instance.new("Frame")
+InsideDot3.Name = "InsideDot"
+InsideDot3.Parent = Dot3
+InsideDot3.AnchorPoint = Vector2.new(0.5, 0.5)
+InsideDot3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InsideDot3.Position = UDim2.new(0.5, 0, 0.5, 0)
+InsideDot3.Size = UDim2.new(0, 14, 0, 14)
+
+local Bar = Instance.new("Frame")
+Bar.Name = "Bar"
+Bar.Parent = RMainFrame
+Bar.AnchorPoint = Vector2.new(0.5, 0)
+Bar.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Bar.BorderSizePixel = 0
+Bar.Position = UDim2.new(0.5, 0, 0.6, 0) -- Moved up the loading bar
+Bar.Size = UDim2.new(0, 300, 0, 15)
+
+local BarFill = Instance.new("Frame")
+BarFill.Name = "BarFill"
+BarFill.Parent = Bar
+BarFill.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+BarFill.BorderSizePixel = 0
+BarFill.Size = UDim2.new(0, 0, 1, 0)
+
+local Percentage = Instance.new("TextLabel")
+Percentage.Name = "Percentage"
+Percentage.Parent = RMainFrame
+Percentage.AnchorPoint = Vector2.new(0.5, 0)
+Percentage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Percentage.BackgroundTransparency = 1
+Percentage.Position = UDim2.new(0.5, 0, 0.68, 0) -- Moved up the percentage text
+Percentage.Size = UDim2.new(0, 200, 0, 20)
+Percentage.Font = Enum.Font.FredokaOne
+Percentage.Text = "0%"
+Percentage.TextColor3 = Color3.fromRGB(255, 255, 255)
+Percentage.TextSize = 26
+
+local Tip = Instance.new("TextLabel")
+Tip.Name = "Tip"
+Tip.Parent = RMainFrame
+Tip.AnchorPoint = Vector2.new(0.5, 0)
+Tip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Tip.BackgroundTransparency = 1
+Tip.Position = UDim2.new(0.5, 0, 0.5, 0) -- Centered the tip text
+Tip.Size = UDim2.new(0, 300, 0, 20)
+Tip.Font = Enum.Font.SourceSansItalic
+Tip.Text = _G.FirstText
+Tip.TextColor3 = Color3.fromRGB(138, 138, 138)
+Tip.TextSize = 22 -- Increased text size for the tip text
+
+-- Dot Animation Coroutine
+local function animateDots()
+    while true do
+        wait(0.5)
+        Dot1.InsideDot:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Sine", 0.5, true)
+        wait(0.5)
+        Dot2.InsideDot:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Sine", 0.5, true)
+        wait(0.5)
+        Dot3.InsideDot:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Sine", 0.5, true)
+        wait(0.5)
+        Dot1.InsideDot:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Sine", 0.5, true)
+        wait(0.5)
+        Dot2.InsideDot:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Sine", 0.5, true)
+        wait(0.5)
+        Dot3.InsideDot:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Sine", 0.5, true)
+    end
 end
-;
-RLoading.Name = "RizzHub";
-RLoading.Parent = game:GetService("CoreGui");
-RLoading.IgnoreGuiInset = true;
-RMainFrame.Name = "RMainFrame";
-RMainFrame.Parent = RLoading;
-RMainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20);
-RMainFrame.BorderSizePixel = 0;
-RMainFrame.Size = UDim2.new(1, 0, 1, 0);
-RTitle.Name = "RTitle";
-RTitle.Parent = RMainFrame;
-RTitle.AnchorPoint = Vector2.new(0, 0);
-RTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-RTitle.BackgroundTransparency = 0;
-RTitle.Position = UDim2.new(0, 0, 0, 0);
-RTitle.Size = UDim2.new(1, 0, 0, 0);
-RTitle.Font = Enum.Font.FredokaOne;
-RTitle.Text = _G.ScriptName;
-RTitle.TextColor3 = Color3.fromRGB(255, 255, 255);
-RTitle.TextScaled = true;
-RTitle.TextSize = 0;
-RTitle.TextWrapped = true;
-UITextSizeConstraint.Parent = RTitle;
-UITextSizeConstraint.MaxTextSize = 88;
-Dots.Name = "Dots";
-Dots.Parent = RMainFrame;
-Dots.AnchorPoint = Vector2.new(0, 0);
-Dots.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-Dots.BackgroundTransparency = 0;
-Dots.Position = UDim2.new(0, 0, 0, 0);
-Dots.Size = UDim2.new(0, 0, 0, 0);
-Dot1.Name = "Dot1";
-Dot1.Parent = Dots;
-Dot1.BackgroundColor3 = Color3.fromRGB(40, 40, 40);
-Dot1.Position = UDim2.new(0, 0, 0, 0);
-Dot1.Size = UDim2.new(0, 0, 0, 0);
-UICorner.CornerRadius = UDim.new(0, 0);
-UICorner.Parent = Dot1;
-InsideDot.Name = "InsideDot";
-InsideDot.Parent = Dot1;
-InsideDot.AnchorPoint = Vector2.new(0, 0);
-InsideDot.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-InsideDot.Position = UDim2.new(0, 0, 0, 0);
-UICorner_2.CornerRadius = UDim.new(0, 0);
-UICorner_2.Parent = InsideDot;
-Dot2.Name = "Dot2";
-Dot2.Parent = Dots;
-Dot2.BackgroundColor3 = Color3.fromRGB(40, 40, 40);
-Dot2.Position = UDim2.new(0, 0, 0, 0);
-Dot2.Size = UDim2.new(0, 0, 0, 0);
-UICorner_3.CornerRadius = UDim.new(0, 0);
-UICorner_3.Parent = Dot2;
-InsideDot_2.Name = "InsideDot";
-InsideDot_2.Parent = Dot2;
-InsideDot_2.AnchorPoint = Vector2.new(0, 0);
-InsideDot_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-InsideDot_2.Position = UDim2.new(0, 0, 0, 0);
-UICorner_4.CornerRadius = UDim.new(0, 0);
-UICorner_4.Parent = InsideDot_2;
-Dot3.Name = "Dot3";
-Dot3.Parent = Dots;
-Dot3.BackgroundColor3 = Color3.fromRGB(40, 40, 40);
-Dot3.Position = UDim2.new(0, 0, 0, 0);
-Dot3.Size = UDim2.new(0, 0, 0, 0);
-UICorner_5.CornerRadius = UDim.new(0, 0);
-UICorner_5.Parent = Dot3;
-InsideDot_3.Name = "InsideDot";
-InsideDot_3.Parent = Dot3;
-InsideDot_3.AnchorPoint = Vector2.new(0, 0);
-InsideDot_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-InsideDot_3.Position = UDim2.new(0, 0, 0, 0);
-UICorner_6.CornerRadius = UDim.new(0, 0);
-UICorner_6.Parent = InsideDot_3;
-Bar.Name = "Bar";
-Bar.Parent = RMainFrame;
-Bar.AnchorPoint = Vector2.new(0, 0);
-Bar.BackgroundColor3 = Color3.fromRGB(40, 40, 40);
-Bar.BorderSizePixel = 0;
-Bar.Position = UDim2.new(0, 0, 0, 0);
-Bar.Size = UDim2.new(0, 0, 0, 0);
-Bar2.Name = "Bar2";
-Bar2.Parent = Bar;
-Bar2.BackgroundColor3 = Color3.fromRGB(60, 60, 60);
-Bar2.BorderSizePixel = 0;
-Bar2.Size = UDim2.new(0, 0, 1, 0);
-UICorner_7.CornerRadius = UDim.new(0, 0);
-UICorner_7.Parent = Bar2;
-UICorner_8.CornerRadius = UDim.new(0, 0);
-UICorner_8.Parent = Bar;
-Percentage.Name = "Percentage";
-Percentage.Parent = Bar;
-Percentage.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-Percentage.BackgroundTransparency = 0;
-Percentage.Position = UDim2.new(0, 0, 0, 0);
-Percentage.Size = UDim2.new(0, 0, 0, 0);
-Percentage.Font = Enum.Font.FredokaOne;
-Percentage.Text = "0%";
-Percentage.TextColor3 = Color3.fromRGB(255, 255, 255);
-Percentage.TextScaled = true;
-Percentage.TextSize = 0;
-Percentage.TextWrapped = true;
-UITextSizeConstraint_2.Parent = Percentage;
-UITextSizeConstraint_2.MaxTextSize = 22;
-Tip.Name = "Tip";
-Tip.Parent = RMainFrame;
-Tip.AnchorPoint = Vector2.new(0, 0);
-Tip.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-Tip.BackgroundTransparency = 0;
-Tip.Position = UDim2.new(0, 0, 0, 0);
-Tip.Size = UDim2.new(0, 0, 0, 0);
-Tip.Font = Enum.Font.SourceSansItalic;
-Tip.Text = "Waiting For Respond";
-Tip.TextColor3 = Color3.fromRGB(138, 138, 138);
-Tip.TextScaled = true;
-Tip.TextSize = 0;
-Tip.TextWrapped = true;
-UITextSizeConstraint_3.Parent = Tip;
-UITextSizeConstraint_3.MaxTextSize = 14;
-welcome.Name = "welcome";
-welcome.Parent = RMainFrame;
-welcome.AnchorPoint = Vector2.new(0, 0);
-welcome.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-welcome.BackgroundTransparency = 0;
-welcome.Position = UDim2.new(0, 0, 0, 0);
-welcome.Size = UDim2.new(0, 0, 0, 0);
-welcome.Font = Enum.Font.Highway;
-welcome.Text = "Thanks To " .. pusername .. " For Using Our Script";
-welcome.TextColor3 = Color3.fromRGB(255, 255, 255);
-welcome.TextScaled = true;
-welcome.TextSize = 0;
-welcome.TextWrapped = true;
-UITextSizeConstraint_4.Parent = welcome;
-UITextSizeConstraint_4.MaxTextSize = 24;
-leave.Name = "leave";
-leave.Parent = RMainFrame;
-leave.AnchorPoint = Vector2.new(0, 0);
-leave.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-leave.BackgroundTransparency = 0;
-leave.Position = UDim2.new(0, 0, 0, 0);
-leave.Size = UDim2.new(0, 0, 0, 0);
-leave.Font = Enum.Font.FredokaOne;
-leave.Text = "Please Do Not Leave";
-leave.TextColor3 = Color3.fromRGB(255, 0, 0);
-leave.TextScaled = true;
-leave.TextSize = 0;
-leave.TextWrapped = true;
-UITextSizeConstraint_5.Parent = leave;
-UITextSizeConstraint_5.MaxTextSize = 18;
-EndSequence.Name = "EndSequence";
-EndSequence.Parent = RLoading;
-EndSequence.BackgroundColor3 = Color3.fromRGB(20, 20, 20);
-EndSequence.BorderSizePixel = 0;
-EndSequence.Position = UDim2.new(1, 0, 0, 0);
-EndSequence.Size = UDim2.new(1, 0, 1, 0);
-local function FTUHD_fake_script()
-	local script = Instance.new("LocalScript", Dots);
-	while true do
-		wait(0);
-		script.Parent.Dot1.InsideDot:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Sine", 0, true);
-		wait(0);
-		script.Parent.Dot2.InsideDot:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Sine", 0, true);
-		wait(0);
-		script.Parent.Dot3.InsideDot:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Sine", 0, true);
-		wait(0);
-		script.Parent.Dot1.InsideDot:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Sine", 0, true);
-		wait(0);
-		script.Parent.Dot2.InsideDot:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Sine", 0, true);
-		wait(0);
-		script.Parent.Dot3.InsideDot:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Sine", 0, true);
-	end
-	;
+
+-- Loading Bar Animation Coroutine
+local function animateLoadingBar()
+    wait(5)
+    BarFill:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Linear", _G.WaitingTime, true)
+    wait(_G.WaitingTime)
 end
-;
-(coroutine.wrap(FTUHD_fake_script))();
-local function WBKZQ_fake_script()
-	local script = Instance.new("LocalScript", RMainFrame);
-	local bar = script.Parent.Bar;
-	local insidebar = bar.Bar2;
-	local percentage = bar.Percentage;
-	wait(5);
-	insidebar:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Linear", _G.WaitingTime + 1, true);
-	wait(_G.WaitingTime + 1);
+
+-- Percentage Text Animation Coroutine
+local function animatePercentageText()
+    wait(5)
+    local numberwaiting = _G.WaitingTime / 100
+    for i = 1, 100 do
+        Percentage.Text = i .. "%"
+        wait(numberwaiting)
+    end
+    Percentage.Text = "Completed"
+    wait(1)
+    RLoading:Destroy()
 end
-;
-(coroutine.wrap(WBKZQ_fake_script))();
-local function HLSHMMZ_fake_script()
-	local script = Instance.new("LocalScript", Percentage);
-	local numberwaiting = _G.WaitingTime / 100;
-	wait(5);
-	for i = 1, 100 do
-		script.Parent.Text = i .. "%";
-		wait(numberwaiting);
-	end
-	;
+
+-- Tip Text Animation Coroutine
+local function animateTipText()
+    local tip = Tip
+    while true do
+        wait(5)
+        tip.Text = _G.FirstText
+        wait(5)
+        tip.Text = _G.SecondText
+        wait(5)
+        tip.Text = _G.ThirdText
+    end
 end
-;
-(coroutine.wrap(HLSHMMZ_fake_script))();
-local function MXNTFNP_fake_script()
-	local script = Instance.new("LocalScript", Tip);
-	local tip = script.Parent;
-	while true do
-		wait(5);
-		tip.Text = _G.FirstText;
-		wait(5);
-		tip.Text = _G.SecondText;
-		wait(5);
-		tip.Text = _G.ThirdText;
-	end
-	;
-end
-;
-(coroutine.wrap(MXNTFNP_fake_script))();
+
+-- Start the coroutines
+coroutine.wrap(animateDots)()
+coroutine.wrap(animateLoadingBar)()
+coroutine.wrap(animatePercentageText)()
+coroutine.wrap(animateTipText)()
