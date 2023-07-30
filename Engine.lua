@@ -1,110 +1,250 @@
-LOADING SCREEN SCRIPT : ROBLOX.
--------------------------------
-
-Designing within LocalScripts
-To design and display a custom loading screen:
-
-In ReplicatedFirst, create a LocalScript. 
-
-Use the following code sample to create and customize a ScreenGui object. You can modify the following code with your own values to create your design: 
-
-
-SCRIPT
-
-
-local Players = game:GetService("Players")
-local ReplicatedFirst = game:GetService("ReplicatedFirst")
-
-local player = Players.LocalPlayer
-local playerGui = player:WaitForChild("PlayerGui")
-
-local screenGui = Instance.new("ScreenGui")
-screenGui.IgnoreGuiInset = true
-screenGui.Parent = playerGui
--- Replace ScreenGui values with your own
-local textLabel = Instance.new("TextLabel")
-textLabel.Size = UDim2.new(1, 0, 1, 0)
-textLabel.BackgroundColor3 = Color3.fromRGB(0, 20, 40)
-textLabel.Font = Enum.Font.GothamSemibold
-textLabel.TextColor3 = Color3.new(0.8, 0.8, 0.8)
-textLabel.Text = "Loading"
-textLabel.TextSize = 28
-textLabel.Parent = screenGui
-
--- Remove the default loading screen
-ReplicatedFirst:RemoveDefaultLoadingScreen()
-
-task.wait(5)  -- Force screen to appear for a minimum number of seconds
-if not game:IsLoaded() then
- game.Loaded:Wait()
+local pusername = (game:GetService("Players")).LocalPlayer.Name;
+local RLoading = Instance.new("ScreenGui");
+local RMainFrame = Instance.new("Frame");
+local RTitle = Instance.new("TextLabel");
+local UITextSizeConstraint = Instance.new("UITextSizeConstraint");
+local Dots = Instance.new("Frame");
+local Dot1 = Instance.new("Frame");
+local UICorner = Instance.new("UICorner");
+local InsideDot = Instance.new("Frame");
+local UICorner_2 = Instance.new("UICorner");
+local Dot2 = Instance.new("Frame");
+local UICorner_3 = Instance.new("UICorner");
+local InsideDot_2 = Instance.new("Frame");
+local UICorner_4 = Instance.new("UICorner");
+local Dot3 = Instance.new("Frame");
+local UICorner_5 = Instance.new("UICorner");
+local InsideDot_3 = Instance.new("Frame");
+local UICorner_6 = Instance.new("UICorner");
+local Bar = Instance.new("Frame");
+local Bar2 = Instance.new("Frame");
+local UICorner_7 = Instance.new("UICorner");
+local UICorner_8 = Instance.new("UICorner");
+local Percentage = Instance.new("TextLabel");
+local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint");
+local Tip = Instance.new("TextLabel");
+local UITextSizeConstraint_3 = Instance.new("UITextSizeConstraint");
+local welcome = Instance.new("TextLabel");
+local UITextSizeConstraint_4 = Instance.new("UITextSizeConstraint");
+local leave = Instance.new("TextLabel");
+local UITextSizeConstraint_5 = Instance.new("UITextSizeConstraint");
+local EndSequence = Instance.new("Frame");
+if _G.ScriptName == nil and _G.FirstText == nil and _G.SecondText == nil and _G.ThirdText == nil and _G.WaitingTime == nil then
+	_G.ScriptName = "Cypaex Hub";
+	_G.FirstText = "Preparing Script...";
+	_G.SecondText = "Loading Script...";
+	_G.ThirdText = "Almost Done...";
+	_G.WaitingTime = 180;
 end
-screenGui:Destroy()
-
-Referencing ScreenGuis
-Instead of creating the ScreenGui through a LocalScript, you can also reference an existing ScreenGui directly in your workspace. Ensure that your experience includes a ScreenGui within ReplicatedFirst and that the ScreenGui includes UI elements like TextLabels and ImageLabels, then set it as the loading screen by referencing it within a LocalScript. This method allows you to easily view your loading screen as you're creating it.
-
-To demonstrate this process, the following LocalScript references a ScreenGui named LoadingScreen within ReplicatedFirst, then removes the default loading screen so the only loading screen a user can see is your own custom loading screen:
-
-
-local Players = game:GetService("Players")
-local ReplicatedFirst = game:GetService("ReplicatedFirst")
-
-local player = Players.LocalPlayer
-local playerGui = player:WaitForChild("PlayerGui")
-
-local screenGui = ReplicatedFirst:FindFirstChild("LoadingScreen")
-screenGui.IgnoreGuiInset = true
-screenGui.Parent = playerGui
-
--- Remove the default loading screen
-ReplicatedFirst:RemoveDefaultLoadingScreen()
-
-task.wait(5)  -- Force screen to appear for a minimum number of seconds
-if not game:IsLoaded() then
-	game.Loaded:Wait()
+;
+RLoading.Name = "CypaexHub";
+RLoading.Parent = game:GetService("CoreGui");
+RLoading.IgnoreGuiInset = true;
+RMainFrame.Name = "RMainFrame";
+RMainFrame.Parent = RLoading;
+RMainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20);
+RMainFrame.BorderSizePixel = 0;
+RMainFrame.Size = UDim2.new(1, 0, 1, 0);
+RTitle.Name = "RTitle";
+RTitle.Parent = RMainFrame;
+RTitle.AnchorPoint = Vector2.new(0, 0);
+RTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+RTitle.BackgroundTransparency = 0;
+RTitle.Position = UDim2.new(0, 0, 0, 0);
+RTitle.Size = UDim2.new(1, 0, 0, 0);
+RTitle.Font = Enum.Font.FredokaOne;
+RTitle.Text = _G.ScriptName;
+RTitle.TextColor3 = Color3.fromRGB(255, 255, 255);
+RTitle.TextScaled = true;
+RTitle.TextSize = 0;
+RTitle.TextWrapped = true;
+UITextSizeConstraint.Parent = RTitle;
+UITextSizeConstraint.MaxTextSize = 88;
+Dots.Name = "Dots";
+Dots.Parent = RMainFrame;
+Dots.AnchorPoint = Vector2.new(0, 0);
+Dots.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+Dots.BackgroundTransparency = 0;
+Dots.Position = UDim2.new(0, 0, 0, 0);
+Dots.Size = UDim2.new(0, 0, 0, 0);
+Dot1.Name = "Dot1";
+Dot1.Parent = Dots;
+Dot1.BackgroundColor3 = Color3.fromRGB(40, 40, 40);
+Dot1.Position = UDim2.new(0, 0, 0, 0);
+Dot1.Size = UDim2.new(0, 0, 0, 0);
+UICorner.CornerRadius = UDim.new(0, 0);
+UICorner.Parent = Dot1;
+InsideDot.Name = "InsideDot";
+InsideDot.Parent = Dot1;
+InsideDot.AnchorPoint = Vector2.new(0, 0);
+InsideDot.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+InsideDot.Position = UDim2.new(0, 0, 0, 0);
+UICorner_2.CornerRadius = UDim.new(0, 0);
+UICorner_2.Parent = InsideDot;
+Dot2.Name = "Dot2";
+Dot2.Parent = Dots;
+Dot2.BackgroundColor3 = Color3.fromRGB(40, 40, 40);
+Dot2.Position = UDim2.new(0, 0, 0, 0);
+Dot2.Size = UDim2.new(0, 0, 0, 0);
+UICorner_3.CornerRadius = UDim.new(0, 0);
+UICorner_3.Parent = Dot2;
+InsideDot_2.Name = "InsideDot";
+InsideDot_2.Parent = Dot2;
+InsideDot_2.AnchorPoint = Vector2.new(0, 0);
+InsideDot_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+InsideDot_2.Position = UDim2.new(0, 0, 0, 0);
+UICorner_4.CornerRadius = UDim.new(0, 0);
+UICorner_4.Parent = InsideDot_2;
+Dot3.Name = "Dot3";
+Dot3.Parent = Dots;
+Dot3.BackgroundColor3 = Color3.fromRGB(40, 40, 40);
+Dot3.Position = UDim2.new(0, 0, 0, 0);
+Dot3.Size = UDim2.new(0, 0, 0, 0);
+UICorner_5.CornerRadius = UDim.new(0, 0);
+UICorner_5.Parent = Dot3;
+InsideDot_3.Name = "InsideDot";
+InsideDot_3.Parent = Dot3;
+InsideDot_3.AnchorPoint = Vector2.new(0, 0);
+InsideDot_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+InsideDot_3.Position = UDim2.new(0, 0, 0, 0);
+UICorner_6.CornerRadius = UDim.new(0, 0);
+UICorner_6.Parent = InsideDot_3;
+Bar.Name = "Bar";
+Bar.Parent = RMainFrame;
+Bar.AnchorPoint = Vector2.new(0, 0);
+Bar.BackgroundColor3 = Color3.fromRGB(40, 40, 40);
+Bar.BorderSizePixel = 0;
+Bar.Position = UDim2.new(0, 0, 0, 0);
+Bar.Size = UDim2.new(0, 0, 0, 0);
+Bar2.Name = "Bar2";
+Bar2.Parent = Bar;
+Bar2.BackgroundColor3 = Color3.fromRGB(60, 60, 60);
+Bar2.BorderSizePixel = 0;
+Bar2.Size = UDim2.new(0, 0, 1, 0);
+UICorner_7.CornerRadius = UDim.new(0, 0);
+UICorner_7.Parent = Bar2;
+UICorner_8.CornerRadius = UDim.new(0, 0);
+UICorner_8.Parent = Bar;
+Percentage.Name = "Percentage";
+Percentage.Parent = Bar;
+Percentage.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+Percentage.BackgroundTransparency = 0;
+Percentage.Position = UDim2.new(0, 0, 0, 0);
+Percentage.Size = UDim2.new(0, 0, 0, 0);
+Percentage.Font = Enum.Font.FredokaOne;
+Percentage.Text = "0%";
+Percentage.TextColor3 = Color3.fromRGB(255, 255, 255);
+Percentage.TextScaled = true;
+Percentage.TextSize = 0;
+Percentage.TextWrapped = true;
+UITextSizeConstraint_2.Parent = Percentage;
+UITextSizeConstraint_2.MaxTextSize = 22;
+Tip.Name = "Tip";
+Tip.Parent = RMainFrame;
+Tip.AnchorPoint = Vector2.new(0, 0);
+Tip.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+Tip.BackgroundTransparency = 0;
+Tip.Position = UDim2.new(0, 0, 0, 0);
+Tip.Size = UDim2.new(0, 0, 0, 0);
+Tip.Font = Enum.Font.SourceSansItalic;
+Tip.Text = "Waiting For Respond";
+Tip.TextColor3 = Color3.fromRGB(138, 138, 138);
+Tip.TextScaled = true;
+Tip.TextSize = 0;
+Tip.TextWrapped = true;
+UITextSizeConstraint_3.Parent = Tip;
+UITextSizeConstraint_3.MaxTextSize = 14;
+welcome.Name = "welcome";
+welcome.Parent = RMainFrame;
+welcome.AnchorPoint = Vector2.new(0, 0);
+welcome.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+welcome.BackgroundTransparency = 0;
+welcome.Position = UDim2.new(0, 0, 0, 0);
+welcome.Size = UDim2.new(0, 0, 0, 0);
+welcome.Font = Enum.Font.Highway;
+welcome.Text = "Thanks To " .. pusername .. " For Using Our Script";
+welcome.TextColor3 = Color3.fromRGB(255, 255, 255);
+welcome.TextScaled = true;
+welcome.TextSize = 0;
+welcome.TextWrapped = true;
+UITextSizeConstraint_4.Parent = welcome;
+UITextSizeConstraint_4.MaxTextSize = 24;
+leave.Name = "leave";
+leave.Parent = RMainFrame;
+leave.AnchorPoint = Vector2.new(0, 0);
+leave.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+leave.BackgroundTransparency = 0;
+leave.Position = UDim2.new(0, 0, 0, 0);
+leave.Size = UDim2.new(0, 0, 0, 0);
+leave.Font = Enum.Font.FredokaOne;
+leave.Text = "Please Do Not Leave";
+leave.TextColor3 = Color3.fromRGB(255, 0, 0);
+leave.TextScaled = true;
+leave.TextSize = 0;
+leave.TextWrapped = true;
+UITextSizeConstraint_5.Parent = leave;
+UITextSizeConstraint_5.MaxTextSize = 18;
+EndSequence.Name = "EndSequence";
+EndSequence.Parent = RLoading;
+EndSequence.BackgroundColor3 = Color3.fromRGB(20, 20, 20);
+EndSequence.BorderSizePixel = 0;
+EndSequence.Position = UDim2.new(1, 0, 0, 0);
+EndSequence.Size = UDim2.new(1, 0, 1, 0);
+local function FTUHD_fake_script()
+	local script = Instance.new("LocalScript", Dots);
+	while true do
+		wait(0);
+		script.Parent.Dot1.InsideDot:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Sine", 0, true);
+		wait(0);
+		script.Parent.Dot2.InsideDot:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Sine", 0, true);
+		wait(0);
+		script.Parent.Dot3.InsideDot:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Sine", 0, true);
+		wait(0);
+		script.Parent.Dot1.InsideDot:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Sine", 0, true);
+		wait(0);
+		script.Parent.Dot2.InsideDot:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Sine", 0, true);
+		wait(0);
+		script.Parent.Dot3.InsideDot:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Sine", 0, true);
+	end
+	;
 end
-screenGui:Destroy()
-
-Adding Animations
-In addition to static custom loading screens, you can add animations to enhance the loading screen and indicate loading progress. The easiest way to do this is to create a UI element, such as a TextLabel or ImageLabel, then to animate it using TweenService. For example, the following code sample creates a new ScreenGui with a child ImageLabel, removes the default loading screen, then TweenService rotates the ImageLabel continuously until the experience loads:
-
-local Players = game:GetService("Players")
-local ReplicatedFirst = game:GetService("ReplicatedFirst")
-local TweenService = game:GetService("TweenService")
-
-local player = Players.LocalPlayer
-local playerGui = player:WaitForChild("PlayerGui")
-
-local screenGui = Instance.new("ScreenGui")
-screenGui.IgnoreGuiInset = true
-screenGui.Parent = playerGui
-local textLabel = Instance.new("TextLabel")
-textLabel.Size = UDim2.new(1, 0, 1, 0)
-textLabel.BackgroundColor3 = Color3.fromRGB(0, 20, 40)
-textLabel.Font = Enum.Font.GothamSemibold
-textLabel.TextColor3 = Color3.new(0.8, 0.8, 0.8)
-textLabel.Text = "Loading"
-textLabel.TextSize = 28
-textLabel.Parent = screenGui
-local loadingRing = Instance.new("ImageLabel")
-loadingRing.Size = UDim2.new(0, 256, 0, 256)
-loadingRing.BackgroundTransparency = 1
-loadingRing.Image = "rbxassetid://4965945816"
-loadingRing.AnchorPoint = Vector2.new(0.5, 0.5)
-loadingRing.Position = UDim2.new(0.5, 0, 0.5, 0)
-loadingRing.Parent = screenGui
-
--- Remove the default loading screen
-ReplicatedFirst:RemoveDefaultLoadingScreen()
-
-local tweenInfo = TweenInfo.new(4, Enum.EasingStyle.Linear, Enum.EasingDirection.In, -1)
-local tween = TweenService:Create(loadingRing, tweenInfo, {Rotation = 360})
-tween:Play()
-
-task.wait(5)  -- Force screen to appear for a minimum number of seconds
-if not game:IsLoaded() then
- game.Loaded:Wait()
+;
+(coroutine.wrap(FTUHD_fake_script))();
+local function WBKZQ_fake_script()
+	local script = Instance.new("LocalScript", RMainFrame);
+	local bar = script.Parent.Bar;
+	local insidebar = bar.Bar2;
+	local percentage = bar.Percentage;
+	wait(5);
+	insidebar:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Linear", _G.WaitingTime + 1, true);
+	wait(_G.WaitingTime + 1);
 end
-screenGui:Destroy()
-
-Enjoy the script.
+;
+(coroutine.wrap(WBKZQ_fake_script))();
+local function HLSHMMZ_fake_script()
+	local script = Instance.new("LocalScript", Percentage);
+	local numberwaiting = _G.WaitingTime / 100;
+	wait(5);
+	for i = 1, 100 do
+		script.Parent.Text = i .. "%";
+		wait(numberwaiting);
+	end
+	;
+end
+;
+(coroutine.wrap(HLSHMMZ_fake_script))();
+local function MXNTFNP_fake_script()
+	local script = Instance.new("LocalScript", Tip);
+	local tip = script.Parent;
+	while true do
+		wait(5);
+		tip.Text = _G.FirstText;
+		wait(5);
+		tip.Text = _G.SecondText;
+		wait(5);
+		tip.Text = _G.ThirdText;
+	end
+	;
+end
+;
+(coroutine.wrap(MXNTFNP_fake_script))();
